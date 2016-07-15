@@ -1,10 +1,14 @@
 Package: rGeoPackage
 Type: Package
-Title: What the Package Does (Title Case)
-Version: 0.1.0
-Author: Who wrote it
-Maintainer: Who to complain to <yourfault@somewhere.net>
+Title: Reading and Writing of Spatial data as well as Metadata of GeoPackage files
+Version: 0.0.1
+Authors@R: c(
+            person("Rainer", "Krug",    role = c("aut", "cre"), email = "Rainer@krugs.de"),
+            person("Michael", "Sumner", role = c("ctb"))
+            )
+Author: Rainer M Krug with contributions from Michael Sumner
+Maintainer: Rainer M. Krug <Rainer@krugs.de>
 Description: More about what it does (maybe more than one line)
-License: What license is it under?
+License: GPL-3
 LazyData: TRUE
 Imports: rgdal
