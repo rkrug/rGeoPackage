@@ -1,4 +1,5 @@
 library(rgdal)
+library(sp)
 
 # simple example, from vignette("sp"):
 Sr1 = Polygon(cbind(c(2,4,4,1,2),c(2,3,5,4,2)))
