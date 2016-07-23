@@ -29,5 +29,5 @@ geopackage <- function(x, y, verbose = TRUE, ...) {
       if (!any(grepl(y, layers))) stop(sprintf("layer not found: %s", y))
     }
   }
-  rgdal::readOGR(x, y, ...)
+  rgdal::readOGR(x, y, verbose = verbose, ...)
 }
