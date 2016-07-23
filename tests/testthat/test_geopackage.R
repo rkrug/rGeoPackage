@@ -26,23 +26,31 @@ mpointlayer <- as(linelayer, "SpatialMultiPointsDataFrame")
 
 # read the data which comes with the package ------------------------------
 
-print( "\n\n-------------- line --------------")
+print("")
+print("")
+print( "-------------- line --------------")
 f_line   <- system.file("extdata", "file_line.gpkg",   package= "rGeoPackage")
 x_line   <- geopackage(f_line,   verbose=TRUE)
 print( all.equal(x_line,   linelayer) )
 
 
-print( "\n\n-------------- point --------------")
+print("")
+print("")
+print( "-------------- point --------------")
 f_point  <- system.file("extdata", "file_point.gpkg",  package= "rGeoPackage")
 x_point  <- geopackage(f_point,  verbose=TRUE)
 print( all.equal(x_point,  pointlayer) )
 
-print( "\n\n-------------- poly --------------")
+print("")
+print("")
+print( "-------------- poly --------------")
 f_poly   <- system.file("extdata", "file_poly.gpkg",   package= "rGeoPackage")
 x_poly   <- geopackage(f_poly,  verbose=TRUE)
 print( all.equal(x_poly,  polylayer) )
 
-print( "\n\n-------------- mpoint --------------")
+print("")
+print("")
+print( "-------------- mpoint --------------")
 f_mpoint <- system.file("extdata", "file_mpoint.gpkg", package= "rGeoPackage")
 x_mpoint <- geopackage(f_mpoint, verbose=TRUE)
 print( all.equal(x_mpoint, mpointlayer) )
