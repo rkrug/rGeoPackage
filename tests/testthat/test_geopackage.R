@@ -1,4 +1,5 @@
 stopifnot(require(rGeoPackage))
+stopifnot(require(sp))
 
 
 # Create sample data as in files.R ----------------------------------------
@@ -25,19 +26,23 @@ mpointlayer <- as(linelayer, "SpatialMultiPointsDataFrame")
 
 # read the data which comes with the package ------------------------------
 
+print( "\n\n-------------- line --------------")
 f_line   <- system.file("extdata", "file_line.gpkg",   package= "rGeoPackage")
-f_mpoint <- system.file("extdata", "file_mpoint.gpkg", package= "rGeoPackage")
-f_point  <- system.file("extdata", "file_point.gpkg",  package= "rGeoPackage")
-f_poly   <- system.file("extdata", "file_poly.gpkg",   package= "rGeoPackage")
-
 x_line   <- geopackage(f_line,   verbose=TRUE)
-x_mpoint <- geopackage(f_mpoint, verbose=TRUE)
+print( all.equal(x_line,   linelayer) )
+
+
+print( "\n\n-------------- point --------------")
+f_point  <- system.file("extdata", "file_point.gpkg",  package= "rGeoPackage")
 x_point  <- geopackage(f_point,  verbose=TRUE)
+print( all.equal(x_point,  pointlayer) )
+
+print( "\n\n-------------- poly --------------")
+f_poly   <- system.file("extdata", "file_poly.gpkg",   package= "rGeoPackage")
 x_poly   <- geopackage(f_poly,  verbose=TRUE)
+print( all.equal(x_poly,  polylayer) )
 
-
-all.equal(x_line,   linelayer)
-all.equal(x_mpoint, mpointlayer)
-all.equal(x_point,  pointlayer)
-all.equal(x_poly,  polylayer)
-
+print( "\n\n-------------- mpoint --------------")
+f_mpoint <- system.file("extdata", "file_mpoint.gpkg", package= "rGeoPackage")
+x_mpoint <- geopackage(f_mpoint, verbose=TRUE)
+print( all.equal(x_mpoint, mpointlayer) )
