@@ -27,3 +27,12 @@ writeOGR(linelayer, dsn = "inst/extdata/file_line.gpkg", layer = "linelayer", dr
 row.names(pointlayer) <- gsub("\\.", "_", row.names(pointlayer))
 writeOGR(pointlayer, dsn = "inst/extdata/file_point.gpkg", layer = "pointlayer", driver = "GPKG")
 writeOGR(mpointlayer, dsn = "inst/extdata/file_mpoint.gpkg", layer = "mpointlayer", driver = "GPKG")
+
+
+# Create combined layer ---------------------------------------------------
+
+system("ogr2ogr -f 'GPKG' inst/extdata/all.gpkg inst/extdata/file_line.gpkg")
+system("ogr2ogr -update -append -f 'GPKG' inst/extdata/all.gpkg inst/extdata/file_point.gpkg")
+system("ogr2ogr -update -append -f 'GPKG' inst/extdata/all.gpkg inst/extdata/file_poly.gpkg")
+system("ogr2ogr -update -append -f 'GPKG' inst/extdata/all.gpkg inst/extdata/file_mpoint.gpkg")
+
