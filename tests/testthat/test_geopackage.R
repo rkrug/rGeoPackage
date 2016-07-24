@@ -33,7 +33,6 @@ f_line   <- system.file("extdata", "file_line.gpkg",   package= "rGeoPackage")
 x_line   <- geopackage(f_line,   verbose=TRUE)
 print( all.equal(x_line,   linelayer) )
 
-
 print("")
 print("")
 print( "-------------- point --------------")
