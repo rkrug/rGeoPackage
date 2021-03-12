@@ -1,8 +1,8 @@
 Package: rGeoPackage
-Type: Package
+Type: DISCONTINUED Package
 Title: Reading and Writing of Spatial data as well as Metadata of GeoPackage
     files
-Version: 0.0.1
+Version: x.y.z
 Authors@R: c(
             person("Rainer", "Krug",    role = c("aut", "cre"), email = "Rainer@krugs.de"),
             person("Michael", "Sumner", role = c("ctb"))
